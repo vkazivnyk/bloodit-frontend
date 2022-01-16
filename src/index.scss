@@ -1,0 +1,14 @@
+@use '../global/scss/global.scss' as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body #root {
+    min-height: 100vh;
+    background-color: $main-background-color;
+    font-family: sans-serif;
+}
