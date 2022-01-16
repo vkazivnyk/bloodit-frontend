@@ -1,0 +1,11 @@
+@import '../../../global/scss/global.scss';
+
+button {
+    width: 7rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+    font-family: sans-serif;
+    background-color: $button-background-color;
+    color: $button-color;
+    border: none;
+}

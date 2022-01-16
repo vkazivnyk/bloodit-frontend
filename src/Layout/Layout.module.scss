@@ -1,0 +1,13 @@
+@import '../../global/scss/global.scss';
+
+header {
+    background-color: $component-background-color;
+    padding: 0.3rem 1rem;
+    display: flex;
+    font-size: 1.2rem;
+    position: relative;
+    z-index: 1;
+    h1 {
+        font-size: 2rem;
+    }
+}
