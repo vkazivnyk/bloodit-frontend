@@ -1,4 +1,4 @@
-@import '../../global/scss/global.scss';
+@use '../../global/scss/global.scss' as *;
 
 header {
     background-color: $component-background-color;

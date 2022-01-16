@@ -2,7 +2,7 @@ import React from 'react';
 import './Button.module.scss';
 
 interface ButtonProps {
-    onClick: () => void;
+    onClick?: () => void;
     customClass?: string;
     children: string;
 }

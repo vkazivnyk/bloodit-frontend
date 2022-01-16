@@ -1,10 +1,9 @@
-@import '../../../global/scss/global.scss';
+@use '../../../global/scss/global.scss' as *;
 
 button {
     width: 7rem;
     border-radius: 1rem;
     font-size: 1rem;
-    font-family: sans-serif;
     background-color: $button-background-color;
     color: $button-color;
     border: none;

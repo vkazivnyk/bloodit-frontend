@@ -7,18 +7,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <div className={classes.container}>
             <header>
                 <h1>Bloodit</h1>
-                <Button
-                    onClick={() => {
-                        console.log('hi');
-                    }}>
-                    Log in
-                </Button>
-                <Button
-                    onClick={() => {
-                        console.log('hi');
-                    }}>
-                    Sign in
-                </Button>
+                <Button>Log in</Button>
+                <Button>Sign in</Button>
             </header>
             <main>{children}</main>
         </div>
