@@ -7,7 +7,14 @@
         "sh-waqar/declaration-use-variable": [
             [
                 "/color/",
-                { "ignoreValues": ["transparent", "inherit", "/rgba/"] }
+                {
+                    "ignoreValues": [
+                        "transparent",
+                        "inherit",
+                        "/rgba/",
+                        "/darken/"
+                    ]
+                }
             ]
         ],
         "selector-class-pattern": null

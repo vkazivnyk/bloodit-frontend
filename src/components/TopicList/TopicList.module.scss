@@ -1,0 +1,61 @@
+@use '../../global/scss/global.scss' as *;
+
+.Wrapper {
+    position: fixed;
+    margin-top: 10px;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    right: 75px;
+    background-color: $component-background-color;
+    height: 450px;
+    width: 300px;
+}
+
+.TopicList {
+    list-style-type: none;
+
+    li a {
+        display: block;
+        cursor: pointer;
+        padding: 8px 16px;
+        text-decoration: none;
+        border-bottom: 2px solid $topic-list-border-color;
+    }
+
+    li a.active {
+        background-color: $input-background-color;
+    }
+
+    li a:hover {
+        background-color: $input-background-color;
+    }
+}
+
+.TopicWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.33rem;
+
+    .MainTopicWrapper {
+        display: flex;
+        flex-direction: column;
+
+        .SubscribersSpan {
+            color: $second-text-color;
+            font-size: 0.7rem;
+        }
+    }
+}
+
+.ButtonWrapper {
+    width: 70px;
+}
+
+@media (max-width: 1300px) {
+    .Wrapper {
+        position: relative;
+        width: 100%;
+        right: 0;
+    }
+}
