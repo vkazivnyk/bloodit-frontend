@@ -1,13 +1,93 @@
-@use '../../global/scss/global.scss' as *;
+@use '../global/scss/global.scss' as *;
 
 header {
     background-color: $component-background-color;
-    padding: 0.3rem 1rem;
+    padding: 0.4rem 1rem;
     display: flex;
+    gap: 40px;
     font-size: 1.2rem;
     position: relative;
     z-index: 1;
+    border-bottom: 1px solid $header-border-color;
     h1 {
         font-size: 2rem;
+    }
+    .buttonContainer {
+        margin-left: auto;
+        display: flex;
+        gap: 0.6rem;
+        .logInButton {
+            border: 2px solid $button-background-color;
+            background-color: $button-color;
+            color: $button-background-color;
+        }
+    }
+}
+
+.searchInput {
+    position: relative;
+    font-size: 1rem;
+    .loupe {
+        margin: 0px 5px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 5px;
+        color: $loupe-color;
+    }
+    width: 30%;
+    input {
+        padding: 0px 40px;
+        height: 100%;
+        background-color: $input-background-color;
+        border: none;
+        border-radius: 5px;
+        width: 100%;
+        position: relative;
+        z-index: 10;
+    }
+    input:focus {
+        outline: 1px solid $input-focus-border;
+    }
+    .searchingPopup {
+        background-color: $component-background-color;
+        position: absolute;
+        width: 100%;
+        top: 45px;
+        transform: translateX(-50%);
+        border-radius: 3px;
+        justify-content: flex-start;
+        text-align: start;
+        display: flex;
+        flex-direction: column;
+        padding: 0px;
+        a {
+            padding: 20px 50px;
+            text-decoration: none;
+            color: $main-text-color;
+            position: relative;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        a:hover {
+            background-color: $input-background-color;
+        }
+    }
+    .searchingBackdrop {
+        background-color: transparent;
+        z-index: 5;
+    }
+}
+
+@media (max-width: 75rem) {
+    .searchInput {
+        width: 60%;
+    }
+}
+
+@media (max-width: 40rem) {
+    .searchInput {
+        width: 100%;
     }
 }
