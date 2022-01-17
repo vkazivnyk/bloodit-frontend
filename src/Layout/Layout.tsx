@@ -35,12 +35,14 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                             <a href="https://www.pornhub.com">
                                 Suggested variant
                             </a>
-                            <a
-                                href="https://www.pornhub.com"
-                                className={classes.fullScanLink}>
-                                <BsSearch className={classes.loupe} />
-                                Search for {searchingText}
-                            </a>
+                            {searchingText ? (
+                                <a
+                                    href="https://www.pornhub.com"
+                                    className={classes.fullScanLink}>
+                                    <BsSearch className={classes.loupe} />
+                                    Search for {searchingText}
+                                </a>
+                            ) : null}
                         </Popup>
                     ) : null}
                 </div>
