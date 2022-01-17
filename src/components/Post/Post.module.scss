@@ -1,0 +1,66 @@
+@use '../../global/scss/global.scss' as *;
+
+.container {
+    border: 1px solid $border-color;
+    background-color: $component-background-color;
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: 40px auto;
+    grid-template-areas:
+        'aside header'
+        'aside title'
+        'aside main'
+        'aside footer';
+
+    h1 {
+        grid-area: title;
+        padding: 10px;
+        margin: 5px;
+    }
+    border-radius: 5px;
+    max-height: 300px;
+}
+
+.container:hover {
+    border: 1px solid $post-hover-border-color;
+}
+
+.mainContent {
+    grid-area: main;
+    padding: 0px 20px;
+    overflow: hidden;
+    max-height: 150px;
+}
+
+.addMask {
+    mask-image: linear-gradient(180deg, #000 60%, transparent);
+}
+
+.postAside {
+    max-height: 298px;
+    border-radius: 5px 0px 0px 5px;
+    grid-area: aside;
+    background-color: $post-aside-color;
+    height: 100%;
+}
+
+.postHeader {
+    padding: 5px;
+    font-size: 1rem;
+    grid-area: header;
+    color: $second-text-color;
+    a,
+    div {
+        display: inline;
+    }
+    a {
+        text-decoration: none;
+        color: $second-text-color;
+    }
+}
+
+.postFooter {
+    color: $second-text-color;
+    grid-area: footer;
+    padding: 20px;
+}

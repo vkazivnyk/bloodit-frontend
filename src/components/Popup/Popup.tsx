@@ -9,7 +9,7 @@ interface PopupProps {
     children: React.ReactNode;
 }
 
-export const Popup = ({
+const Popup = ({
     children,
     PopupStyle,
     BackdropStyle,
@@ -22,3 +22,5 @@ export const Popup = ({
         </>
     );
 };
+
+export default Popup;
