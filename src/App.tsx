@@ -1,9 +1,12 @@
 import Layout from './Layout/Layout';
+import Home from './containers/Home/Home';
 
 function App() {
     return (
         <div>
-            <Layout>Hi</Layout>
+            <Layout>
+                <Home />
+            </Layout>
         </div>
     );
 }

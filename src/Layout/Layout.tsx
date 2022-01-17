@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import classes from './Layout.module.scss';
 import Button from '../components/Button/Button';
 import { BsSearch } from 'react-icons/bs';
-import { Popup } from '../components/Popup/Popup';
+import Popup from '../components/Popup/Popup';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
     const [isSearching, setIsSearching] = useState(false);
