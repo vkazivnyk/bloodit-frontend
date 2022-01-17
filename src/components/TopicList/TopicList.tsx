@@ -12,7 +12,7 @@ const TopicList = ({ topics }: TopicListProps) => {
             <ul className={classes.TopicList}>
                 {topics.map(t => (
                     <li key={t.topicName}>
-                        <a>
+                        <a href=".">
                             <div className={classes.TopicWrapper}>
                                 <span className={classes.NumberSpan}>
                                     {number++}

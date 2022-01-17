@@ -18,9 +18,7 @@ class Home extends React.Component<HomeProps, HomeState> {
 
         return (
             <div className={classes.container}>
-                <div className={classes.Wrapper}>
-                    <TopicList topics={array} />
-                </div>
+                <TopicList topics={array} />
                 <Post
                     title={title}
                     subBloodIt="#/Bloodit"
