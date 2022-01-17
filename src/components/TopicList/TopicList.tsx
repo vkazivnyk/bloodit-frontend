@@ -6,16 +6,15 @@ interface TopicListProps {
 }
 
 const TopicList = ({ topics }: TopicListProps) => {
-    let number = 1;
     return (
         <div className={classes.Wrapper}>
             <ul className={classes.TopicList}>
-                {topics.map(t => (
+                {topics.map((t, index) => (
                     <li key={t.topicName}>
                         <a href=".">
                             <div className={classes.TopicWrapper}>
                                 <span className={classes.NumberSpan}>
-                                    {number++}
+                                    {index + 1}
                                 </span>
                                 <div className={classes.MainTopicWrapper}>
                                     <span className={classes.NameSpan}>
@@ -26,7 +25,6 @@ const TopicList = ({ topics }: TopicListProps) => {
                                     </span>
                                 </div>
                                 <Button
-                                    onClick={() => console.log()}
                                     customClass={`${classes.ButtonWrapper}`}>
                                     Join
                                 </Button>
