@@ -4,7 +4,7 @@ import './Button.module.scss';
 interface ButtonProps {
     onClick?: () => void;
     customClass?: string;
-    children: string;
+    children: React.ReactNode;
 }
 
 const Button = ({ onClick, customClass, children }: ButtonProps) => {
