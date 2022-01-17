@@ -15,8 +15,6 @@ export const Popup = ({
     BackdropStyle,
     onDismiss,
 }: PopupProps) => {
-    console.log();
-
     return (
         <>
             <Backdrop BackdropStyle={BackdropStyle} onClick={onDismiss} />
