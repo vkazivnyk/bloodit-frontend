@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './Home.module.scss';
 import Post from '../../components/Post/Post';
+import TopicList from '../../components/TopicList/TopicList';
 
 interface HomeState {}
 interface HomeProps {}
@@ -10,8 +11,14 @@ const title = 'Lorem ipsum dolor';
 class Home extends React.Component<HomeProps, HomeState> {
     state: HomeState = {};
     render() {
+        const array = [
+            { topicName: 'Oleg', subscribers: 100 },
+            { topicName: 'Olegg', subscribers: 90 },
+        ];
+
         return (
             <div className={classes.container}>
+                <TopicList topics={array} />
                 <Post
                     title={title}
                     subBloodIt="#/Bloodit"

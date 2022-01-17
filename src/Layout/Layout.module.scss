@@ -21,6 +21,10 @@ header {
             background-color: $button-color;
             color: $button-background-color;
         }
+
+        .logInButton:hover {
+            background-color: darken($button-color, 4%);
+        }
     }
 }
 

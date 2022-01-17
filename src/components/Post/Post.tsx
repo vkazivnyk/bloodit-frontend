@@ -32,9 +32,9 @@ const Post = ({
             <div className={classes.container}>
                 <div className={classes.postAside}>Like</div>
                 <div className={classes.postHeader}>
-                    <a href="#">{subBloodIt}</a>
+                    <a href=".">{subBloodIt}</a>
                     <div> Posted by </div>
-                    <a href="#">{author}</a>
+                    <a href=".">{author}</a>
                     <div> {creatingDate}</div>
                 </div>
                 <h1>{title}</h1>
