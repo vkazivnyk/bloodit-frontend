@@ -1,7 +1,59 @@
+@use '../../global/scss/global.scss' as *;
+
 .container {
     display: flex;
     flex-direction: column;
     width: 40%;
     padding-top: 10px;
     gap: 10px;
+}
+
+.editorTextArea {
+    background-color: $component-background-color;
+    max-height: 400px;
+    min-height: 150px;
+}
+
+.editorToolbar {
+    background-color: $editorToolbar-color;
+    border: 1px solid $header-border-color;
+}
+
+.popupStyle {
+    background-color: $component-background-color;
+    input {
+        margin: 10px 0px;
+        height: 30px;
+        border: 1px solid $header-border-color;
+        outline: none;
+        font-size: 1rem;
+        padding: 5px;
+        width: 100%;
+    }
+}
+
+.wrapperClassName {
+    border: 1px solid $header-border-color;
+}
+
+.newPostButton {
+    float: right;
+    position: relative;
+    height: 40px;
+    width: 150px;
+    margin-top: 10px;
+    z-index: 15;
+}
+
+.subBlodditWrapper {
+    width: 40%;
+    position: relative;
+    float: left;
+}
+
+.suggestedBloodit {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
 }
