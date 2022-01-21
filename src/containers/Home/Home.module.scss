@@ -22,6 +22,8 @@
 .popupStyle {
     background-color: $component-background-color;
     input {
+        background-color: $component-background-color;
+        border-radius: 0px;
         margin: 10px 0px;
         height: 30px;
         border: 1px solid $header-border-color;
@@ -56,4 +58,29 @@
     display: flex;
     align-items: center;
     padding: 10px;
+}
+
+.creatingPostInput {
+    width: 100%;
+    height: 50px;
+    background-color: $component-background-color;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    input {
+        width: 100%;
+        height: 70%;
+        margin-right: 20px;
+        padding: 0px 10px;
+    }
+    svg {
+        height: 30px;
+        width: 30px;
+        margin: 5px 10px;
+        border-radius: 50%;
+        background-color: $second-text-color;
+        fill: $component-background-color;
+    }
 }

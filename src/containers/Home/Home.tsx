@@ -5,23 +5,28 @@ import TopicList from '../../components/TopicList/TopicList';
 import Popup from '../../components/Popup/Popup';
 import { Editor } from 'react-draft-wysiwyg';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
-import { EditorState } from 'draft-js';
+import { EditorState, convertToRaw } from 'draft-js';
 import Button from '../../components/Button/Button';
 import SearchingPopup from '../../components/SearchingPopup/SearchingPopup';
+import draftToHtml from 'draftjs-to-html';
+import parse from 'html-react-parser';
+import Input from '../../components/Input/Input';
+import { ReactComponent as Icon } from '../../assets/accountIcon.svg';
 
 interface PostProps {
     title: string;
     subBloodIt: string;
     creatingDate: string;
     author: string;
-    content: string;
+    content: React.ReactNode;
+    likes: number;
 }
 
 interface HomeState {
     isCreatingPost: boolean;
     newSubbloddit: string;
     newPostTitle: string;
-    newPostContent: string;
+    newPostContent: typeof EditorState;
     isChoosingNewSubbloddit: boolean;
     Posts: Array<PostProps>;
 }
@@ -40,12 +45,23 @@ class Home extends React.Component<HomeProps, HomeState> {
     createPost = () => {
         const { Posts, newPostTitle, newPostContent, newSubbloddit } =
             this.state;
+        const newContent = (
+            <div>
+                {parse(
+                    draftToHtml(
+                        convertToRaw(newPostContent.getCurrentContent()),
+                    ),
+                )}
+            </div>
+        );
+        console.log(typeof newContent);
         Posts.push({
             title: newPostTitle,
-            content: 'newPostContent',
+            content: newContent,
             subBloodIt: newSubbloddit,
             author: 'Vlad',
             creatingDate: '12 years age',
+            likes: 0,
         });
         this.setState({
             isCreatingPost: false,
@@ -73,17 +89,22 @@ class Home extends React.Component<HomeProps, HomeState> {
         return (
             <div className={classes.container}>
                 <TopicList topics={array} />
-                <input
-                    type="text"
-                    onFocus={() => this.setState({ isCreatingPost: true })}
-                />
+                <div className={classes.creatingPostInput}>
+                    <Icon />
+                    <Input
+                        type="text"
+                        placeholder="Create post"
+                        onFocus={() => this.setState({ isCreatingPost: true })}
+                    />
+                </div>
                 {Posts.map(el => (
                     <Post
                         key={el.title + el.author + el.creatingDate}
                         title={el.title}
                         subBloodIt={el.subBloodIt}
                         creatingDate={el.creatingDate}
-                        author={el.author}>
+                        author={el.author}
+                        likes={el.likes}>
                         {el.content}
                     </Post>
                 ))}
@@ -96,7 +117,7 @@ class Home extends React.Component<HomeProps, HomeState> {
                             });
                         }}
                         PopupStyle={classes.popupStyle}>
-                        <input
+                        <Input
                             type="text"
                             onChange={e => {
                                 this.setState({ newPostTitle: e.target.value });
@@ -115,7 +136,7 @@ class Home extends React.Component<HomeProps, HomeState> {
                             }
                         />
                         <div className={classes.subBlodditWrapper}>
-                            <input
+                            <Input
                                 type="text"
                                 placeholder="subBloddit"
                                 onFocus={() => {

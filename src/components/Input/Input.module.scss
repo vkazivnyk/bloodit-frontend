@@ -1,0 +1,13 @@
+@use '../../global/scss/global.scss' as *;
+
+input {
+    background-color: $input-background-color;
+    border: 1px solid $header-border-color;
+    border-radius: 5px;
+    position: relative;
+}
+input:hover,
+:focus {
+    border: none;
+    outline: 1px solid $input-focus-border;
+}

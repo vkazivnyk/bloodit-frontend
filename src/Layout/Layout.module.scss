@@ -42,16 +42,9 @@ header {
     width: 30%;
     input {
         padding: 0px 40px;
-        height: 100%;
-        background-color: $input-background-color;
-        border: none;
-        border-radius: 5px;
-        width: 100%;
-        position: relative;
         z-index: 10;
-    }
-    input:focus {
-        outline: 1px solid $input-focus-border;
+        height: 100%;
+        width: 100%;
     }
     a {
         padding: 20px 50px;
