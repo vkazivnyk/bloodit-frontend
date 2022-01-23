@@ -1,0 +1,21 @@
+@use '../../global/scss/global.scss' as *;
+
+.searchingPopup {
+    background-color: $component-background-color;
+    position: absolute;
+    width: 100%;
+    top: 45px;
+    transform: translateX(-50%);
+    border-radius: 3px;
+    justify-content: flex-start;
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+        rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.searchingBackdrop {
+    background-color: transparent;
+    z-index: 5;
+}

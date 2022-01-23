@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import classes from './Layout.module.scss';
 import Button from '../components/Button/Button';
 import { BsSearch } from 'react-icons/bs';
-import Popup from '../components/Popup/Popup';
+import SearchingPopup from '../components/SearchingPopup/SearchingPopup';
+import Input from '../components/Input/Input';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
     const [isSearching, setIsSearching] = useState(false);
@@ -13,7 +14,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 <h1>Bloodit</h1>
                 <div className={classes.searchInput}>
                     <BsSearch className={classes.loupe} />
-                    <input
+                    <Input
                         type="text"
                         placeholder="Search"
                         onFocus={() => {
@@ -22,10 +23,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                         onChange={e => setSearchingText(e.target.value)}
                     />
                     {isSearching ? (
-                        <Popup
-                            onDismiss={() => setIsSearching(false)}
-                            PopupStyle={classes.searchingPopup}
-                            BackdropStyle={classes.searchingBackdrop}>
+                        <SearchingPopup onDismiss={() => setIsSearching(false)}>
                             <a href="https://www.pornhub.com">
                                 Suggested variant
                             </a>
@@ -43,7 +41,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                                     Search for {searchingText}
                                 </a>
                             ) : null}
-                        </Popup>
+                        </SearchingPopup>
                     ) : null}
                 </div>
                 <div className={classes.buttonContainer}>

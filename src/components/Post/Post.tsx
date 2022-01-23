@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react';
 import classes from './Post.module.scss';
+import { ImArrowUp, ImArrowDown } from 'react-icons/im';
 
 interface PostProps {
-    children?: string;
+    children?: React.ReactNode;
     title: string;
     subBloodIt: string;
     creatingDate: string;
     author: string;
+    likes: number;
 }
 
 function isOverflowing(el: HTMLElement | null): boolean {
@@ -20,6 +22,7 @@ const Post = ({
     creatingDate,
     author,
     subBloodIt,
+    likes,
 }: PostProps) => {
     const contentRef = React.createRef<HTMLDivElement>();
     useEffect(() => {
@@ -30,7 +33,11 @@ const Post = ({
     return (
         <>
             <div className={classes.container}>
-                <div className={classes.postAside}>Like</div>
+                <div className={classes.postAside}>
+                    <ImArrowUp className={classes.icon} size={20} />
+                    {likes}
+                    <ImArrowDown className={classes.icon} size={20} />
+                </div>
                 <div className={classes.postHeader}>
                     <a href=".">{subBloodIt}</a>
                     <div> Posted by </div>
@@ -39,7 +46,7 @@ const Post = ({
                 </div>
                 <h1>{title}</h1>
                 <div ref={contentRef} className={`${classes.mainContent}`}>
-                    <p>{children}</p>
+                    {children}
                 </div>
                 <div className={classes.postFooter}>comment</div>
             </div>
